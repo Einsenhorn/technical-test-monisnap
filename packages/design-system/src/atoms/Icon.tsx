@@ -1,9 +1,9 @@
 import React from "react";
 
-export interface IconProperties {
+export interface IconPropertiesType {
     type: string;
 }
 
-export const Icon: React.FC<IconProperties> = (props: IconProperties) => (
-    <span className="material-icons">{props.type}</span>
-);
+export const Icon: React.FC<IconPropertiesType> = (
+    props: IconPropertiesType
+) => <span className="material-icons">{props.type}</span>;

@@ -1,25 +1,25 @@
-export enum Gender {
+export enum GenderType {
     Female = 1,
     Male = 2,
 }
 
-export interface Recipient {
+export interface RecipientType {
     id: number;
-    gender: Gender;
+    gender: GenderType;
     firstname: string;
     lastname: string;
 }
 
-export enum TransferStatus {
+export enum TransferStatusType {
     Error = 0,
     Success = 1,
 }
 
-export interface Transfer {
+export interface TransferType {
     id: number;
     country: string;
     amount: number;
-    recipient: Recipient;
-    status: TransferStatus;
+    recipient: RecipientType;
+    status: TransferStatusType;
     date: Date;
 }

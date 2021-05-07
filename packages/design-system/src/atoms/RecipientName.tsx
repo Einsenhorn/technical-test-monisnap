@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Recipient } from "../common/types";
+import { RecipientType } from "../common";
 
 const RecipientNameWrapper = styled.div`
     color: #0a090a;
@@ -12,7 +12,9 @@ const RecipientNameWrapper = styled.div`
     line-height: 20px;
 `;
 
-export const RecipientName: React.FC<Recipient> = (props: Recipient) => {
+export const RecipientName: React.FC<RecipientType> = (
+    props: RecipientType
+) => {
     let name = props.firstname;
 
     if (typeof props.lastname === "string" && props.lastname.length > 0) {

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 import { Flag } from "../atoms";
-import { Gender } from "../common/types";
+import { GenderType } from "../common";
 
-import Female from "../../assets/avatar/female.svg";
-import Male from "../../assets/avatar/male.svg";
+import Female from "@assets/avatar/female.svg";
+import Male from "@assets/avatar/male.svg";
 
-export interface AvatarProperties {
-    gender: Gender;
+export interface AvatarPropertiesType {
+    gender: GenderType;
     country: string;
 }
 
@@ -23,10 +23,12 @@ const FlagWrapper = styled.span`
     right: 0px;
 `;
 
-export const Avatar: React.FC<AvatarProperties> = (props: AvatarProperties) => {
+export const Avatar: React.FC<AvatarPropertiesType> = (
+    props: AvatarPropertiesType
+) => {
     return (
         <AvatarWrapper>
-            <img src={props.gender === Gender.Female ? Female : Male} />
+            <img src={props.gender === GenderType.Female ? Female : Male} />
             <FlagWrapper>
                 <Flag country={props.country} />
             </FlagWrapper>

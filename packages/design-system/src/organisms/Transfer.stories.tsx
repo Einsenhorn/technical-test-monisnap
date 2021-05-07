@@ -1,18 +1,18 @@
 import React from "react";
 import {
-    Gender,
-    Recipient,
-    Transfer as TransferType,
-    TransferStatus,
-} from "../common/types";
+    GenderType,
+    RecipientType,
+    TransferType,
+    TransferStatusType,
+} from "../common";
 
 import Transfer from "./Transfer";
 
 const createRecipient = (
     firstname: string,
     lastname: string,
-    gender: Gender
-): Recipient => ({
+    gender: GenderType
+): RecipientType => ({
     id: 1,
     firstname,
     lastname,
@@ -20,11 +20,11 @@ const createRecipient = (
 });
 
 const createTransfer = (
-    recipient: Recipient,
+    recipient: RecipientType,
     country: string,
     amount: number,
     date: Date = new Date(),
-    status: TransferStatus = TransferStatus.Success
+    status: TransferStatusType = TransferStatusType.Success
 ): TransferType => {
     return {
         id: 1,
@@ -38,7 +38,7 @@ const createTransfer = (
 
 export const TransferJohnDoe: React.FC = () => {
     const transfer = createTransfer(
-        createRecipient("John", "Doe", Gender.Male),
+        createRecipient("John", "Doe", GenderType.Male),
         "SN",
         42
     );
@@ -55,11 +55,11 @@ export const TransferLeiaOrgana: React.FC = () => {
 
     date.setFullYear(40000);
     const transfer = createTransfer(
-        createRecipient("Leia", "Organa", Gender.Female),
+        createRecipient("Leia", "Organa", GenderType.Female),
         "MA",
         2430432.42,
         date,
-        TransferStatus.Error
+        TransferStatusType.Error
     );
 
     return (

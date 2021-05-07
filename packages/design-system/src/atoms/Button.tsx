@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export interface ButtonProperties {
+export interface ButtonPropertiesType {
     label: string;
     primary?: boolean;
     width?: string;
@@ -26,8 +26,10 @@ const ButtonLabel = styled.span`
     color: #ffffff;
 `;
 
-export const Button: React.FC<ButtonProperties> = (props: ButtonProperties) => (
-    <ButtonComponent primary={!!props.primary} width={props.width}>
+export const Button: React.FC<ButtonPropertiesType> = (
+    props: ButtonPropertiesType
+) => (
+    <ButtonComponent primary={!!props.primary} width={props.width || ""}>
         <ButtonLabel>{props.label}</ButtonLabel>
     </ButtonComponent>
 );

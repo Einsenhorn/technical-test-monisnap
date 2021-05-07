@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import { Button, RecipientName } from "../atoms";
-import { Recipient as RecipientType } from "../common/types";
+import { RecipientType } from "../common";
 import { Avatar } from "../molecules";
-import { format } from "../common/amount";
+import { amountFormat } from "../common/AmountFormat";
 
-export interface RecipientProperties {
+export interface RecipientPropertiesType {
     recipient: RecipientType;
     amount: number;
     country: string;
@@ -40,8 +40,8 @@ const ElementWrapper = styled.span<{
     padding: 10px;
 `;
 
-const Recipient: React.FC<RecipientProperties> = (
-    props: RecipientProperties
+const Recipient: React.FC<RecipientPropertiesType> = (
+    props: RecipientPropertiesType
 ) => {
     const {
         recipient,
@@ -65,7 +65,7 @@ const Recipient: React.FC<RecipientProperties> = (
                 <ElementWrapper flex="auto">
                     <Button
                         primary
-                        label={`Envoyer ${format(amount)}`}
+                        label={`Envoyer ${amountFormat(amount)}`}
                         width="100%"
                     />
                 </ElementWrapper>

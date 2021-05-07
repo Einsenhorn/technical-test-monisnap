@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Avatar } from "./Avatar";
-import { Gender } from "../common/types";
+import { GenderType } from "../common";
 
 export const AvatarFemale: React.FC = () => (
-    <Avatar gender={Gender.Female} country={"SN"} />
+    <Avatar gender={GenderType.Female} country={"SN"} />
 );
 
 export const AvatarMale: React.FC = () => (
-    <Avatar gender={Gender.Male} country={"MC"} />
+    <Avatar gender={GenderType.Male} country={"MC"} />
 );
 
 export default {

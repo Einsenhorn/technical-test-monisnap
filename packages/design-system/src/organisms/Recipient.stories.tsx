@@ -1,11 +1,11 @@
 import React from "react";
-import { Gender, Recipient as RecipientType } from "../common/types";
-import Recipient, { RecipientProperties } from "./Recipient";
+import { GenderType, RecipientType } from "../common";
+import Recipient, { RecipientPropertiesType } from "./Recipient";
 
 const createRecipient = (
     firstname: string,
     lastname: string,
-    gender: Gender
+    gender: GenderType
 ): RecipientType => ({
     id: 1,
     firstname,
@@ -18,7 +18,7 @@ const createRecipientSummary = (
     country: string,
     amount: number,
     numberOfTransfer: number
-): RecipientProperties => ({
+): RecipientPropertiesType => ({
     recipient,
     country,
     amount,
@@ -27,15 +27,15 @@ const createRecipientSummary = (
 });
 
 const johnDoeRecipientSummary = createRecipientSummary(
-    createRecipient("John", "Doe", Gender.Male),
+    createRecipient("John", "Doe", GenderType.Male),
     "SN",
     42,
     2
 );
 
 const leiaOrganaRecipientSummary = createRecipientSummary(
-    createRecipient("Leia", "Organa", Gender.Female),
-    "FRANCE",
+    createRecipient("Leia", "Organa", GenderType.Female),
+    "MA",
     77,
     1
 );

@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { Amount, Button, RecipientName } from "../atoms";
-import { Transfer as TransferType, TransferStatus } from "../common/types";
+import { TransferType, TransferStatusType } from "../common";
 import { Avatar } from "../molecules";
 
-export interface TransferProperties {
+export interface TransferPropertiesType {
     transfer: TransferType;
 }
 
@@ -33,7 +33,9 @@ const ElementWrapper = styled.span<{
     padding: 10px;
 `;
 
-const Transfer: React.FC<TransferProperties> = (props: TransferProperties) => {
+const Transfer: React.FC<TransferPropertiesType> = (
+    props: TransferPropertiesType
+) => {
     const { country, amount, recipient, status, date } = props.transfer;
 
     return (
@@ -48,7 +50,7 @@ const Transfer: React.FC<TransferProperties> = (props: TransferProperties) => {
                 </ElementWrapper>
                 <ElementWrapper flex={1} textAlign={"right"}>
                     <div>
-                        {status === TransferStatus.Success
+                        {status === TransferStatusType.Success
                             ? "Recu"
                             : "Non recu"}
                     </div>

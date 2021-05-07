@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { format } from "../common/amount";
+import { amountFormat } from "../common/AmountFormat";
 
-export interface AmountProperties {
+export interface AmountPropertiesType {
     amount: number;
 }
 
@@ -16,6 +16,6 @@ const AmountWrapper = styled.span`
     line-height: 20px;
 `;
 
-export const Amount: React.FC<AmountProperties> = (props: AmountProperties) => (
-    <AmountWrapper>{format(props.amount, true)}</AmountWrapper>
-);
+export const Amount: React.FC<AmountPropertiesType> = (
+    props: AmountPropertiesType
+) => <AmountWrapper>{amountFormat(props.amount, true)}</AmountWrapper>;

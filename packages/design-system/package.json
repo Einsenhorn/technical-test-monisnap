@@ -5,7 +5,8 @@
   "author": "Einsenhorn <einsenhorn@gmail.com>",
   "homepage": "https://github.com/Einsenhorn/technical-test-monisnap#readme",
   "license": "ISC",
-  "main": "build/index.js",
+  "main": "build/bundle.js",
+  "types": "build/index.d.ts",
   "directories": {
     "build": "build",
     "test": "__tests__"
@@ -18,32 +19,26 @@
     "url": "git+https://github.com/Einsenhorn/technical-test-monisnap.git"
   },
   "scripts": {
-    "build": "parcel build src/index.tsx --dist-dir build",
-    "clean": "tsc --build --clean",
-    "prewatch": "npm run clean",
-    "watch": "parcel watch src/index.tsx --dist-dir build",
+    "build": "npx webpack --config webpack.config.js",
     "lint": "eslint src/*.tsx --quiet --fix",
-    "storybook": "start-storybook -p 6006 -s assets",
-    "build-storybook": "build-storybook -s assets"
+    "storybook": "start-storybook -p 600",
+    "build-storybook": "build-storybook"
   },
   "bugs": {
     "url": "https://github.com/Einsenhorn/technical-test-monisnap/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
-    "@parcel/config-default": "^2.0.0-alpha.3",
-    "@parcel/packager-ts": "^2.0.0-beta.2",
-    "@parcel/transformer-inline-string": "^2.0.0-alpha.3",
-    "@parcel/transformer-raw": "^2.0.0-alpha.3",
-    "@parcel/transformer-typescript-types": "^2.0.0-beta.2",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
+    "@storybook/builder-webpack5": "^6.2.9",
     "@storybook/react": "^6.2.9",
     "@types/isomorphic-fetch": "^0.0.35",
-    "@types/parcel-env": "^0.0.0",
+    "@types/numbro": "^1.9.3",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "babel-loader": "^8.2.2",
@@ -53,14 +48,15 @@
     "eslint-plugin-react": "^7.23.2",
     "isomorphic-fetch": "^3.0.0",
     "numbro": "^2.3.2",
-    "parcel": "^2.0.0-beta.2",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "typescript": "^4.2.4"
+    "styled-components": "^5.3.0",
+    "svg-url-loader": "^7.1.1",
+    "ts-loader": "^8.2.0",
+    "typescript": "^4.2.4",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.7.0"
   },
-  "dependencies": {
-    "@types/styled-components": "^5.1.9",
-    "styled-components": "^5.3.0"
-  }
+  "dependencies": {}
 }
