@@ -1,0 +1,14 @@
+env:
+  browser: true
+  es2021: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaFeatures:
+    tsx: true
+  ecmaVersion: 2020
+  project: 'tsconfig.json'
+  sourceType: module
+rules: {}
+settings:
+  react:
+    version: "detect"
