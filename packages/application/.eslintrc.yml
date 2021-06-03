@@ -1,0 +1,9 @@
+extends:
+  - '../../.eslintrc.yml'
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'prettier'
+  - 'plugin:prettier/recommended'
+plugins:
+  - react

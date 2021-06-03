@@ -1,0 +1,16 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": [
+            "ES2020",
+            "DOM"
+        ],
+        "outDir": "./build"
+    },
+    "include": [
+        "./src",
+        "./src/custom.d.ts"
+    ]
+}
